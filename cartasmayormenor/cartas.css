@@ -1,0 +1,86 @@
+#juego{
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    overflow: visible;
+    border: black 5px groove;
+    background: white;
+    border-radius: 15px;
+}
+.num{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    float:left;
+}
+.carta{
+    position: relative;
+    width: 205px;
+    height: 200px;
+    margin: 20px;
+    background: black;
+    border: #004606 3px groove;
+    border-radius: 15px;
+    float:left;
+    text-align: center;
+    font-size: 850%;
+    box-shadow: 5px 5px 5px #555;
+    color: white;
+}
+.boton{
+  position: relative;
+  border-radius: 15px;
+  width: 23%;
+  margin-left: 7%;
+  margin-top: 2%;
+  height: 100%;
+  background: black;
+  float:left;
+  float:left;
+  text-align: center;
+  font-size: 250%;
+  box-shadow: 5px 5px 5px #000;
+  color: white;
+  border: #004606 3px groove;
+}
+#botones{
+    position: relative;
+    width: 500px;
+    height: 50px;
+    float:left;
+}
+div.boton:hover{
+  background: silver;
+  box-shadow: 2.5px 2.5px 2.5px #000;
+  color: black;
+}
+#pulsacion{
+  position: absolute;
+  width: 500px;
+  height: 75px;
+  overflow: auto;
+  border: #004606 5px groove;
+  background: white;
+  border-radius: 15px;
+  margin: 545px;
+  margin-left: 95px;
+}
+#puntuacion{
+  position: relative;
+  border-radius: 15px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 12%;
+  height: 50px;
+  background: #0079FA;
+  float:left;
+  float:left;
+  text-align: center;
+  font-size: 200%;
+  box-shadow: 5px 5px 5px #000;
+  border: #004606 3px double;
+  color: white;
+}
+h2{
+  font-size: 50px
+}

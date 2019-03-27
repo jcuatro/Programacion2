@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Carta banca</title>
+    <style>
+    
+      #juego{
+          position: absolute;
+          width: 500px;
+          height: 400px;
+          overflow: auto;
+          border: #004606 5px groove;
+          background: green;
+          border-radius: 15px;
+          margin: 45px;
+          margin-left: 95px;
+      }
+      .mesa{
+        	position: relative;
+          width: 250px;
+          height: 200px;
+          float:left;
+      }
+      .carta{
+          position: relative;
+          width: 205px;
+          height: 180px;
+          margin: 20px;
+          background: blue;
+          border: #004606 3px groove;
+          border-radius: 15px;
+          float:left;
+          text-align: center;
+          font-size: 850%;
+          box-shadow: 5px 5px 5px #555;
+          color: white;
+      }
+      .boton{
+        position: relative;
+        border-radius: 15px;
+        width: 23%;
+        margin-left: 7%;
+        margin-top: 2%;
+        height: 100%;
+        background: green;
+        float:left;
+        float:left;
+        text-align: center;
+        font-size: 250%;
+        box-shadow: 5px 5px 5px #000;
+        color: white;
+        border: #004606 3px groove;
+      }
+      #botones{
+          position: relative;
+          width: 500px;
+          height: 50px;
+      }
+      div.boton:hover{
+        background: green;
+        box-shadow: 2.5px 2.5px 2.5px #000;
+        color: white;
+      }
+      #panel{
+        position: absolute;
+        width: 500px;
+        height: 75px;
+        background: blue;
+        border-radius: 15px;
+        margin: 545px;
+        margin-left: 95px;
+      }
+      #puntuacion{
+        position: relative;
+        border-radius: 15px;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 12%;
+        height: 50px;
+        background: blue;
+        float:left;
+        float:left;
+        text-align: center;
+        font-size: 200%;
+        box-shadow: 5px 5px 5px #000;
+        border: #004606 3px double;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="juego">
+      <div class="mesa"><span class="carta" id="carta1"></span></div>
+      <div class="mesa"><span class="carta" id="carta2">?<br>&#9055;</span></div>
+      <div id="puntuacion"></div>
+    </div>
+    <div id="panel">
+      <div id="botones">
+        <div class="boton" onclick="mayor()"><b>+</b></div>
+        <div class="boton" onclick="random()"><b>Otro</b></div>
+        <div class="boton" onclick="menor()"><b>-</b></div>
+      </div>
+    </div>
+    <script>
+      var n1=0;
+      var n2=0;
+      var puntos=0;
+      function random(){
+        do {
+          n1 = Math.floor(Math.random() * (12) + 1);
+          n2 = Math.floor(Math.random() * (12) + 1);
+        } while (n1==n2)
+        document.getElementById('carta1').innerHTML = n1;
+        document.getElementById('carta2').innerHTML = "?";
+      }
+      function mayor(){
+        if (n1>n2){
+          console.log("Ganaste");
+          document.getElementById('carta2').innerHTML = n2;
+          puntos=puntos+1;
+          document.getElementById('puntuacion').innerHTML = "Tienes "+puntos+" puntos";
+        }
+        else{
+          console.log("Perdiste");
+          document.getElementById('carta2').innerHTML = n2;
+          puntos=puntos-1;
+          document.getElementById('puntuacion').innerHTML = "Tienes "+puntos+" puntos";
+        }
+      }
+      function menor(){
+        if (n1<n2){
+          console.log("Ganaste");
+          document.getElementById('carta2').innerHTML = n2;
+          puntos=puntos+1;
+          document.getElementById('puntuacion').innerHTML = "Tienes "+puntos+" puntos";
+        }
+        else{
+          console.log("Perdiste");
+          document.getElementById('carta2').innerHTML = n2;
+          puntos=puntos-1;
+          document.getElementById('puntuacion').innerHTML = "Tienes "+puntos+" puntos";
+        }
+      }
+      random();
+      document.getElementById('puntuacion').innerHTML = "Tienes "+puntos+" puntos";
+      //document.getElementById('carta2').innerHTML = numero2+"<br>&#9055;";
+    </script>
+  </body>
+</html>

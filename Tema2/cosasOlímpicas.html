@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Final de 100 metros js</h1>
+    <script type="text/javascript">
+      var mayor,menor, medio;
+      var corredor1="Paco";
+      var corredor2="Antonio";
+      var corredor3="Evaristo";
+      var tiempo1=Number(prompt("Marca del primer corredor"));
+      var tiempo2=Number(prompt("Marca del segundo corredor"));
+      var tiempo3=Number(prompt("Marca del tercer corredor"));
+      if (tiempo1 >= tiempo2 && tiempo1 >= tiempo3) {
+        mayor = tiempo1;
+        if (tiempo2 >= tiempo3) {
+          medio = tiempo2;
+          menor = tiempo3;
+        }else{
+          medio = tiempo3;
+          menor = tiempo2;
+        }
+      }else if(tiempo2 >= tiempo1 && tiempo2 >= tiempo3){
+        mayor = tiempo2;
+        if (tiempo1 >= tiempo3) {
+          medio = tiempo1;
+          menor =tiempo3;
+        }else{
+          medio = tiempo3;
+          menor = tiempo1;
+        }
+      }else if(tiempo3 >= tiempo1 && tiempo3 >= tiempo2){
+        mayor = tiempo3;
+        if (tiempo1 >= tiempo2) {
+          medio = tiempo1;
+          menor =tiempo2;
+        }else{
+          medio = tiempo2;
+          menor = tiempo1;
+        }
+      }
+    </script>
+    1º
+    <script type="text/javascript">
+      document.writeln(corredor1+" "+menor+"seg");
+    </script>
+    <br>
+    2º
+    <script type="text/javascript">
+      document.writeln(corredor2+" "+medio+"seg");
+    </script>
+    <br>
+    3º
+    <script type="text/javascript">
+      document.writeln(corredor3+" "+mayor+"seg");
+    </script>
+  </body>
+</html>

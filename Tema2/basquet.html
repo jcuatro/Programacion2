@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script type="text/javascript">
+var jugador=[];
+var dospuntos=[];
+var trespuntos=[];
+var tiempo=[];
+var nombre;
+var decimal = "";
+
+
+
+function comprobar(){
+let verificar=true;
+if (nombre != "salir"){
+  verificar = true;
+}
+  else{
+    verificar = false;
+  }
+  return verificar
+}
+
+
+
+function equipo(){
+nombre = prompt("Nombre el jugador","");
+return nombre}
+//introducir canastas de dos
+function doble(){
+  nombre = Number(prompt("Cuantas canastas de dos",""));
+  return nombre}
+//introducir canastas de tres
+function triple(){
+  nombre = Number(prompt("Cuantas canastas de tres",""));
+  return nombre}
+function tiempoj(){
+  nombre= Number(prompt("Tiempo Jugado",""));
+  return nombre}
+equipo();
+
+
+
+while(comprobar()==true){
+    jugador.push(nombre);
+    console.log(jugador);
+    if(comprobar()==true){
+    dospuntos.push(doble());
+    console.log(dospuntos);
+    trespuntos.push(triple());
+    console.log(trespuntos);
+    tiempo.push(tiempoj());
+    console.log(tiempo);
+    equipo();
+  }
+}
+
+
+function mejorpuntaje(){
+let numero=0;
+let marcador=0;
+let puntos2=0;
+let puntos3=0;
+let jugadores=0;
+for(cont=0; cont<dospuntos.length; cont++){
+  puntos2 = dospuntos[cont]*2;
+  puntos3 = trespuntos[cont]*3;
+  numero = puntos2+puntos3;
+  if (numero>marcador){
+    totalpuntos=numero;
+    jugadores=jugador[cont];
+  }
+  }
+  return document.write("El mejor jugador ha sido "+jugadores+" con un total de "+totalpuntos+" puntos");
+}
+
+
+
+function medias2(){
+let cuenta=0;
+let total=0;
+let media=0;
+for(cont=0; cont<dospuntos.length; cont++){
+  numero = dospuntos[cont];
+  total = total + numero;
+  }
+media = total/cont;
+decimal = media.toFixed(2);
+return decimal
+}
+
+
+
+function medias3(){
+let cuenta=0;
+let total=0;
+let media=0;
+for(cont=0; cont<trespuntos.length; cont++){
+  numero = trespuntos[cont];
+  total = total + numero;
+  }
+media = total/cont;
+decimal = media.toFixed(2);
+return decimal
+}
+
+
+
+function mediast(){
+let cuenta=0;
+let total=0;
+let media=0;
+for(cont=0; cont<tiempo.length; cont++){
+  numero = tiempo[cont];
+  total = total + numero;
+  }
+media = total/cont;
+decimal = media.toFixed(2);
+return decimal
+}
+
+
+
+function puntos(){
+let cuenta=0;
+let puntos2=0;
+let puntos3=0;
+let total=0;
+let media=0;
+for(cont=0; cont<dospuntos.length; cont++){
+  puntos2 = dospuntos[cont]*2;
+  puntos3 = trespuntos[cont]*3;
+  numero = numero2+numero3;
+  total = total + numero;
+  }
+return total;
+}
+
+
+
+function mediapuntos(){
+let numero=0;
+let total=puntos();
+let media=0;
+for(cont=0; cont<trespuntos.length; cont++){
+  }
+media = total/cont;
+return media
+}
+
+
+document.write("Media de canastas de dos puntos: "+medias2());
+document.write("<br>");document.write("Media de triples : "+medias3());
+document.write("<br>");document.write("Tiempo medio jugado: "+mediast());
+document.write("<br>");mejorpuntaje();
+</script>
+  </body>
+</html>

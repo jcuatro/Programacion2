@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mayor o menor</title>
+    <link rel="stylesheet" href="cartas.css">
+  </head>
+  <body>
+    <h2>Mayor o menor</h2>
+    <div id="juego">
+      <div class="num"><span class="carta" id="carta1"></span></div>
+      <div class="num"><span class="carta" id="carta2">?<br>&#9055;</span></div>
+      <div id="puntaje"></div>
+    </div>
+    <br>
+    <div id="pulsacion">
+      <div id="botones">
+        <div class="boton" onclick="mayor()"><b>+</b></div>
+        <div class="boton" onclick="otravez()"><b>Cambiar</b></div>
+        <div class="boton" onclick="menor()"><b>-</b></div>
+      </div>
+    </div>
+    <script>
+      var numero1=0;
+      var numero2=0;
+      var puntos=0;
+
+      function otravez(){
+        do {
+          numero1 = Math.floor(Math.random() * (12) + 1);
+          numero2 = Math.floor(Math.random() * (12) + 1);
+        } while (numero1==numero2)
+        document.getElementById('carta1').innerHTML = numero1;
+        document.getElementById('carta2').innerHTML = "?";
+      }
+      function mayor(){
+        if (numero1>numero2){
+          document.getElementById('carta2').innerHTML = numero2;
+          puntos=puntos+1;
+          document.getElementById('puntaje').innerHTML = "Tienes un total de "+puntos+" puntos";
+          alert("Ganaste");
+          otravez();
+        }
+        else{
+          document.getElementById('carta2').innerHTML = numero2;
+          puntos=puntos-1;
+          document.getElementById('puntaje').innerHTML = "Tienes un total de "+puntos+" puntos";
+          alert("Perdiste");
+          otravez();
+        }
+      }
+      function menor(){
+        if (numero1<numero2){
+          document.getElementById('carta2').innerHTML = numero2;
+          puntos=puntos+1;
+          document.getElementById('puntaje').innerHTML = "Tienes un total de "+puntos+" puntos";
+          alert("Ganaste")
+          otravez();
+        }
+        else{
+          document.getElementById('carta2').innerHTML = numero2;
+          puntos=puntos-1;
+          document.getElementById('puntaje').innerHTML = "Tienes un total de "+puntos+" puntos";
+          alert("Perdiste")
+          otravez();
+        }
+      }
+      document.getElementById('puntaje').innerHTML = "Tienes un total de "+puntos+" puntos";
+
+      otravez();
+
+    </script>
+  </body>
+</html>

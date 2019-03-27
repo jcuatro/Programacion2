@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var nombre="";
+    var tiempo=Infinity;
+    var corredor1="";
+    var tiempo1=Infinity;
+    var corredor2="";
+    var tiempo2=Infinity;
+    var corredor3="";
+    var tiempo3=Infinity;
+        //introducir corredores
+          function corredores(){
+              return prompt("Nombre del corredor");
+            }
+        //introducir tiempo
+          function tempo(){
+            return Number(prompt("Marca que ha hecho"));
+          }
+        //Calcular tiempos
+        function marcas(){
+          let puntuacion = 0;
+          let suplente="";
+
+            if(tiempo1 >= tiempo2){
+            puntuacion = tiempo1;
+            tiempo1 =tiempo2;
+            tiempo2 = puntuacion;
+            suplente = corredor1;
+            corredor1 = corredor2;
+            corredor2 = suplente;
+          }
+            if(tiempo1 >= tiempo3){
+              puntuacion = tiempo1;
+              tiempo1 = tiempo3;
+              tiempo3 = puntuacion;
+              suplente = corredor1;
+              corredor1 = corredor3;
+              corredor3 = suplente;
+            }
+              if(tiempo1 >= tiempo){
+                puntuacion = tiempo1;
+                tiempo1 = tiempo;
+                tiempo =puntuacion;
+                suplente = corredor1;
+                corredor1 = nombre;
+                nombre = suplente;
+              }
+                if(tiempo2 >= tiempo3){
+                  puntuacion = tiempo2;
+                  tiempo2 = tiempo3;
+                  tiempo3 = puntuacion;
+                  suplente = corredor2;
+                  corredor2 = corredor3;
+                  corredor3 = suplente;
+                }
+                  if(tiempo2 >= tiempo){
+                      puntuacion = tiempo2;
+                      tiempo2 = tiempo;
+                      tiempo = puntuacion;
+                      suplente = corredor2;
+                      corredor2 = nombre;
+                      nombre = suplente;
+                    }
+                    if(tiempo3 >= tiempo){
+                      puntuacion = tiempo3;
+                      tiempo3 = tiempo;
+                      tiempo = puntuacion;
+                      suplente = corredor3;
+                      corredor3 = nombre;
+                      nombre = suplente;
+                    }
+        }
+
+        //ejercicio
+        while(nombre != "salir"){
+          nombre = corredores();
+          if (nombre != "salir"){
+             tiempo = tempo();
+             console.log(nombre);
+             console.log(tiempo);
+             marcas();
+           }
+        }
+        document.write(corredor1+" "+tiempo1+" "+corredor2+" "+tiempo2+" "+corredor3+" "+tiempo3);
+
+    </script>
+  </body>
+</html>

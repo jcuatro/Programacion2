@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ficha usuario</title>
+    <script type="text/javascript">
+    var nombre=prompt("Introduce tu nombre");
+    var apellidos=prompt("Introduce tus apellidos");
+    var edad=Number(prompt("Digame su edad"));
+    var peso=Number(prompt("Introduce tu peso"));
+    var altura=Number(prompt("Introduce tu altura(metros)"));
+    var ciudad=prompt("Digame en que ciudad vive");
+    var tel=Number(prompt("Su número de teléfono por favor"));
+    var grasa=peso/(altura*altura);
+    var conDecimal=grasa.toFixed(2);
+    alert(nombre + " " + apellidos + " es un genio");
+</script>
+  </head>
+  <body>
+    <h1>BIENVENIDO MARINERO, OJALA TENGAS UN DIA MARABITUPENDO</h1>
+    Nombre:
+    <script type="text/javascript">
+    document.writeln(nombre);
+    </script>
+    <br>
+    Apellidos:
+    <script type="text/javascript">
+
+    document.writeln(apellidos);
+    </script>
+    <br>
+    Edad:
+    <script type="text/javascript">
+    document.writeln(edad);
+    </script>
+    <br>
+    Peso:
+    <script type="text/javascript">
+
+    document.writeln(peso);
+    </script>
+    <br>
+    Altura:
+    <script type="text/javascript">
+      document.writeln(altura);
+    </script>
+    <br>
+    Ciudad:
+    <script type="text/javascript">
+      document.writeln(peso);
+    </script>
+    <br>
+    Teléfono:
+    <script type="text/javascript">
+      document.writeln(tel)
+    </script>
+    <br>
+    Masa corporal:
+    <script type="text/javascript">
+      document.writeln(conDecimal);
+    </script>
+    <br>
+  </body>
+</html>

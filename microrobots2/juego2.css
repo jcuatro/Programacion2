@@ -1,0 +1,72 @@
+body {
+    background: gold;
+
+}
+#formulario{
+  position: absolute;
+  overflow: auto;
+  width: 50%;
+  margin-left: 37%;
+  height: 50%;
+}
+#dads {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  overflow: auto;
+  background-color: white;
+  margin-left: 37%;
+  margin-top: 15%;
+}
+.dados{
+  position: relative;
+  width: 29.333%;
+  height: 85%;
+  float:left;
+  border: 3px solid;
+  text-align: center;
+  font-size: 200%;
+}
+#blanco{
+  position: relative;
+  width: 33.333%;
+  height: 100%;
+  float:left;
+}
+#dado1{
+  background: white;
+}
+#dado2{
+  background: white;
+}
+#boton{
+  position: absolute;
+  margin-left: 37.5%;
+  margin-top: 20%;
+}
+#juego {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    overflow: auto;
+    margin-left: 5%;
+    text-align: center;
+    border: 3px solid;
+    background: black;
+}
+.tablero{
+  	position: relative;
+    width: 50%;
+    height: 50%;
+    float:left;
+}
+
+.celda {
+    position: relative;
+    width: 31.333%;
+    height: 31.333%;
+    float: left;
+    border: 2.5px solid;
+    text-align: center;
+    font-size: 400%;
+}
