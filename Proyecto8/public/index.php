@@ -9,11 +9,11 @@ $resultado=$jugador->listarUsuario();
   <head>
     <meta charset="utf-8">
     <title>Micro Robots</title>
-    <LINK href="microrobots.css" rel="stylesheet" type="text/css">
+    <LINK href="./css/microrobots.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <?php include "./assets/navSup.php"; ?>
-    
+
       <h1>Microrobots &nbsp &nbsp<button id="inicio" onclick="location.reload()"></button></h1>
     <article>
       <div id="formulario">
