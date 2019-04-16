@@ -16,36 +16,28 @@
     {
     }
 
-  /*
-  * Parametro entrada: array $_POST
-  * Parametro salida: string con el $error
-  *                      -""-> sin error
-                         -"MSG"-> error encontrado
-  */
-
-
     public function comprobarCampos($post){
       $error=null;
-      if (!isset($_POST)||!isset($_POST["nombre"])||!isset($_POST["apellidos"])||!isset($_POST["edad"])||!isset($_POST["correo"])||!isset($_POST["usuario"])) {
+      if (!isset($_POST)||!isset($_POST["Nombre"])||!isset($_POST["Apellidos"])||!isset($_POST["Edad"])||!isset($_POST["Correo"])||!isset($_POST["Usuario"])) {
         $error = "";
-      }elseif ($_POST["nombre"] == "") {
+      }elseif ($_POST["Nombre"] == "") {
         $error = "No has introducido ningún nombre.";
-      }elseif ($_POST["apellidos"] == "") {
+      }elseif ($_POST["Apellidos"] == "") {
         $error = "No has introducido ningún apellidos.";
-      }elseif ($_POST["edad"] == "") {
+      }elseif ($_POST["Edad"] == "") {
         $error = "No has introducido edad.";
-      }elseif ($_POST["correo"] == "") {
+      }elseif ($_POST["Correo"] == "") {
         $error = "No has introducido ningúna división.";
-      }elseif ($_POST["usuario"] == "") {
+      }elseif ($_POST["Usuario"] == "") {
         $error = "No has introducido ningúna división.";
       }else{
         $error=false;
-        $this->nombre=$post["nombre"];
-        $this->ciudad=$post["apellidos"];
-        $this->conferencia=$post["edad"];
-        $this->division=$post["puntuacion"];
-        $this->conferencia=$post["correo"];
-        $this->division=$post["usuario"];
+        $this->nombre=$post["Nombre"];
+        $this->ciudad=$post["Apellidos"];
+        $this->conferencia=$post["Edad"];
+        $this->division=$post["Puntuacion"];
+        $this->conferencia=$post["Correo"];
+        $this->division=$post["Usuario"];
       }
       return $error;
     }
@@ -57,9 +49,8 @@
     }
   }
       public function insertarUsuario(){
-
-        $consulta="INSERT INTO `usuarios` (`nombre`, `apellidos`, `edad`, `puntuacion`,`correo`,`usuario`)
-                    VALUES ($this->nombre, $this->apellidos, $this->edad, NULL , $this->correo, $this->usuario)";
+        $consulta="INSERT INTO `usuarios` (`Nombre`, `Apellidos`, `Edad`,`Correo`,`Usuario`)
+                    VALUES ('$this->nombre', '$this->apellidos', $this->edad, '$this->correo', '$this->usuario')";
         $this->conexion->query($consulta);
         echo $consulta;
     }

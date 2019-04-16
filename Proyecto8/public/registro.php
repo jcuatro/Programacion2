@@ -1,13 +1,13 @@
 <?php
   require "./../src/Usuario.php";
 
-  $jugador = new Usuario();
-  $error=$jugador->comprobarCampos($_POST);
+  $usuario = new Usuario();
+  $error=$usuario->comprobarCampos($_POST);
 
   if (isset($error)) {
     if ($error==false) {
-      $jugador->conectar();
-      $jugador->insertarUsuario();
+      $usuario->conectar();
+      $usuario->insertarUsuario();
     }
   }
  ?>
@@ -16,6 +16,7 @@
   <head>
     <meta charset="utf-8">
     <title>Nuevo jugador</title>
+    <link rel="stylesheet" href="./css/user.css">
     <link rel="stylesheet" href="./css/microrobots.css">
   </head>
   <body>
@@ -29,7 +30,7 @@
 
     <!-- Formulario de insercion -->
     <h2>Nuevo Usuario</h2>
-    <form class="formJuegos" action="nuevoUsuario.php" method="post">
+    <form class="formJuegos" action="registro.php" method="post">
       <div class="grupoFormItem">
         <label for="nombre"></label>
         <span class="formLabel">Nombre </span>

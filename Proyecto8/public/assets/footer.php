@@ -1,3 +1,10 @@
+<style media="screen">
+footer{
+  display: block;
+  bottom: 0;
+}
+</style>
+
 <footer>
 <nav>
   <ul>
