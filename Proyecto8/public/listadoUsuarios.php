@@ -10,7 +10,6 @@ $resultado=$usuario->listarUsuario();
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="./css/user.css">
-    <link rel="stylesheet" href="./css/microrobots.css">
   </head>
   <body>
     <?php
@@ -18,11 +17,12 @@ $resultado=$usuario->listarUsuario();
      ?>
     <table border="1" width="70%">
       <br>
-      <th>NOMBRE</th>
-      <th>APELLIDOS</th>
-      <th>CORREO</th>
-      <th>EDAD</th>
-      <th>USUARIO</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Correo</th>
+      <th>Edad</th>
+      <th>Usuario</th>
+      <th>Puntuación</th>
 
       <?php
       foreach ($resultado as $usuario) {
@@ -32,6 +32,7 @@ $resultado=$usuario->listarUsuario();
         echo "<td>".$usuario['Correo']."</td>";
         echo "<td>".$usuario['Edad']."</td>";
         echo "<td>".$usuario['Usuario']."</td>";
+        echo "<td>".$usuario['Puntuacion']."</td>";
         echo "</tr>";
       }
       // var_dump($_POST);

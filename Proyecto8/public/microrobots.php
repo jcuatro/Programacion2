@@ -9,7 +9,6 @@
   <body>
   <?php include "./assets/navSup.php"; ?>
     <section class="microrobots">
-      <header>
         <h1>Microrobots<button id="inicio" onclick="location.reload()"></button></h1>
         <article>
         <div id="formulario">
@@ -40,6 +39,5 @@
         </article>
       <script type="text/javascript" src="js/microrobots.js"></script>
     </section>
-    <?php include "./assets/footer.php"; ?>
   </body>
 </html>

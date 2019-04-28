@@ -7,9 +7,8 @@
     private $conexion=null;
     private $nombre;
     private $apellidos;
-    private $edad;
-    private $puntuacion;
     private $correo;
+    private $edad;
     private $usuario;
 
     function __construct()
@@ -27,17 +26,16 @@
       }elseif ($_POST["Edad"] == "") {
         $error = "No has introducido edad.";
       }elseif ($_POST["Correo"] == "") {
-        $error = "No has introducido ningúna división.";
+        $error = "No has introducido ningúna dirección de correo.";
       }elseif ($_POST["Usuario"] == "") {
-        $error = "No has introducido ningúna división.";
+        $error = "Es necesario un nombre de usuario.";
       }else{
         $error=false;
         $this->nombre=$post["Nombre"];
-        $this->ciudad=$post["Apellidos"];
-        $this->conferencia=$post["Edad"];
-        $this->division=$post["Puntuacion"];
-        $this->conferencia=$post["Correo"];
-        $this->division=$post["Usuario"];
+        $this->apellidos=$post["Apellidos"];
+        $this->correo=$post["Correo"];
+        $this->edad=$post["Edad"];
+        $this->usuario=$post["Usuario"];
       }
       return $error;
     }
@@ -48,9 +46,9 @@
         echo "Fallo al conectar a MySQL: (" . $this->conexion->connect_errno . ") " . $this->conexion->connect_error;
     }
   }
-      public function insertarUsuario(){
-        $consulta="INSERT INTO `usuarios` (`Nombre`, `Apellidos`, `Edad`,`Correo`,`Usuario`)
-                    VALUES ('$this->nombre', '$this->apellidos', $this->edad, '$this->correo', '$this->usuario')";
+      public function insertarUsuario($post){
+        $consulta="INSERT INTO `usuarios` (`Nombre`, `Apellidos`, `Correo`,`Edad`,`Usuario`)
+                    VALUES ('$this->nombre', '$this->apellidos', '$this->correo', $this->edad, '$this->usuario')";
         $this->conexion->query($consulta);
         echo $consulta;
     }
