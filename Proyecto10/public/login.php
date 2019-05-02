@@ -1,8 +1,9 @@
 <?php
 require "./../src/Conexion.php";
 require "./../src/Usuario.php";
+
 $user=new Usuario();
-$user->conexion();
+$user->conectar();
 $resultado=$user->listarUsuario();
 ?>
 
@@ -16,8 +17,8 @@ $resultado=$user->listarUsuario();
     <form class="" action="index.php" method="post">
       <select class="" name="nombre">
         <?php
-        foreach ($resultado as $user ) {
-          $nombre=$user["nombre"];
+        foreach ($resultado as $usuario) {
+          $nombre=$usuario["nombre"];
           echo "<option value='$nombre'>$nombre</option>";
         }
         ?>

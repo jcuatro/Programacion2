@@ -1,14 +1,15 @@
 <?php
+  require "./../src/Conexion.php";
   require "./../src/Usuario.php";
 
-  $usuario = new Usuario();
-  $usuario2 = new Conexion();
-  $error=$usuario->comprobarCampos($_POST);
+
+  $user = new Usuario();
+  $error=$user->comprobarCampos($_POST);
 
   if (isset($error)) {
     if ($error==false) {
-      $usuario->conexion();
-      $usuario->insertarUsuario($_POST);
+      $user->conectar();
+      $user->insertarUsuario($_POST);
     }
   }
  ?>

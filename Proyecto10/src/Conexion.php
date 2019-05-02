@@ -47,7 +47,7 @@ class Conexion {
     $this->pass=$pass;
   }
 
-  public function conexion(){
+  public function conectar(){
     $error=null;
     $this->conexion = new mysqli($this->servidor, $this->usuario, $this->password, $this->bbdd);
       if ($this->conexion->connect_errno) {

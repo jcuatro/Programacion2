@@ -1,3 +1,12 @@
+<?php
+require "./../src/Conexion.php";
+require "./../src/Usuario.php";
+
+$user=new Usuario();
+$user->conectar();
+$resultado=$user->listarUsuario();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -13,9 +22,8 @@
         <article>
         <div id="formulario">
           <?php
-            foreach ($resultado as $usuario) {
-                echo "<h2>".$usuario['Nombre'].' '.$usuario['Apellidos']."</h2>";
-                echo '<h3>Puntos: '.$usuario['Puntuacion'].'</h3>';
+            foreach ($resultado as $user) {
+                echo "<h2>".$user['nombre'].' '.$user['apellidos']."</h2>";
             }
             ?>
           <label for="fila1"><b>Introduce una fila:</b></label>

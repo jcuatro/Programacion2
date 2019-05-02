@@ -1,11 +1,11 @@
 <?php
-require "./../src/Usuario.php";
-require "./../src/Conexion.php";
 
-$conexion = new Conexion();
-$usuario = new Usuario();
-$conexion->conexion();
-$resultado=$usuario->listarUsuario();
+require "./../src/Conexion.php";
+require "./../src/Usuario.php";
+
+$user = new Usuario();
+$user->conectar();
+$resultado=$user->listarUsuario();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -22,20 +22,16 @@ $resultado=$usuario->listarUsuario();
       <br>
       <th>Nombre</th>
       <th>Apellidos</th>
-      <th>Correo</th>
       <th>Edad</th>
-      <th>Usuario</th>
-      <th>Puntuación</th>
+      <th>Curso</th>
 
       <?php
       foreach ($resultado as $usuario) {
         echo "<tr>";
-        echo "<td><a href=microrobots.php?usuario=".$usuario['Nombre'].">".$usuario['Nombre']."</td>";
-        echo "<td>".$usuario['Apellidos']."</td>";
-        echo "<td>".$usuario['Correo']."</td>";
-        echo "<td>".$usuario['Edad']."</td>";
-        echo "<td>".$usuario['Usuario']."</td>";
-        echo "<td>".$usuario['Puntuacion']."</td>";
+        echo "<td><a href=microrobots.php?usuario=".$usuario['nombre'].">".$usuario['nombre']."</td>";
+        echo "<td>".$usuario['apellidos']."</td>";
+        echo "<td>".$usuario['edad']."</td>";
+        echo "<td>".$usuario['curso']."</td>";
         echo "</tr>";
       }
       // var_dump($_POST);
